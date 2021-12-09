@@ -4,7 +4,7 @@ import argparse
 import sys
 
 from pyk       import *
-from pyk.ktool import KPrint
+from pyk.ktool import Kompiled
 
 sys.setrecursionlimit(15000000)
 
@@ -69,7 +69,7 @@ def main(commandLineArgs):
 
     if args['command'] == 'solc-to-k':
         kompiledDirectory = args['directoryx']
-        kevm              = KPrint(kompiledDirectory)
+        kevm              = Kompiled(kompiledDirectory)
         kevm.symbolTable  = kevmSymbolTable(kevm.symbolTable)
 
         contractFile    = args['sol']
